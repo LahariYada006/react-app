@@ -3,7 +3,7 @@ import NewDM from "./components/new-dm";
 import ProfileInfo from "./components/profile-info";
 import apiClient from "@/lib/api-client";
 import { GET_DM_CONTACTS_ROUTES } from "@/utils/constants";
-import Logo from "./Logo";
+import Logo from "./logo";
 import { useAppStore } from "../../../../store";
 import ContactList from "@/components/contact-list";
 import CreateChannel from "./components/create-channel";
