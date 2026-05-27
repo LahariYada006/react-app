@@ -18,6 +18,7 @@ app.use(cors({
     credentials: true,
 })
 );
+app.options("*", cors());
 
 
 app.use("/upload/profiles",express.static("uploads/profiles"));
