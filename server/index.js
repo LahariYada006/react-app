@@ -19,7 +19,7 @@ const databaseURL = process.env.DATA_BASE_URL;
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://react-app-u2pt.vercel.app"
+        "https://react-app-two-lac.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
