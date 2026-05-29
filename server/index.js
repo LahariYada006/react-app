@@ -38,6 +38,6 @@ const server = app.listen(port, '0.0.0.0', () => {
     console.log(`Server is running at http://localhost:${port}`)
 });
 
-setupSocket(server);
+//setupSocket(server);
 
 mongoose.connect(databaseURL).then(() => console.log('DB Connection Successful')).catch(err => console.log(err.message));
