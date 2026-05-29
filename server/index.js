@@ -16,8 +16,11 @@ const port = process.env.PORT || 3001;
 const databaseURL = process.env.DATA_BASE_URL;
 
 app.use(cors({
-    origin: process.env.ORIGIN,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    origin: [
+        "http://localhost:5173",
+        "https://react-app-u2pt.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
 }));
 
