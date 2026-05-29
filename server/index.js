@@ -12,6 +12,7 @@ import channelRoutes from "./routes/ChannelRoutes.js"
 dotenv.config();
 
 const app = express();
+
 const port = process.env.PORT || 3001;
 const databaseURL = process.env.DATA_BASE_URL;
 
@@ -38,6 +39,6 @@ const server = app.listen(port, '0.0.0.0', () => {
     console.log(`Server is running at http://localhost:${port}`)
 });
 
-//setupSocket(server);
+setupSocket(server);
 
 mongoose.connect(databaseURL).then(() => console.log('DB Connection Successful')).catch(err => console.log(err.message));
