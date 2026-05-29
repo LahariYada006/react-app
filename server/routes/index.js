@@ -28,6 +28,13 @@ app.use(cookieParser());
 app.use(express.json());
 app.use("/uploads/profiles", express.static("uploads/profiles"));
 app.use("/uploads/files", express.static("uploads/files"));
+app.get("/", (req, res) => {
+    res.send("Backend Running");
+});
+
+app.get("/health", (req, res) => {
+    res.json({ success: true });
+});
 
 app.use('/api/auth', authRoutes);
 app.use("/api/contacts", contactsRoutes);
