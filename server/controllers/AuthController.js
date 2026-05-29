@@ -1,7 +1,7 @@
 import User from "../models/UserModel.js"
 import jwt from "jsonwebtoken";
 import { compare } from "bcrypt";
-import { renameSync, unlinkSync } from "fs";
+import { renameSync, unlinkSync, existsSync } from "fs";
 
 
 const maxAge = 3 * 24 * 60 * 60 * 1000;
