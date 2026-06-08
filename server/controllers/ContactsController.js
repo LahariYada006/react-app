@@ -55,12 +55,12 @@ export const getContactsForDMList = async (request, response) => {
         $group:{
             _id:{
                 $cond:{
-                    if:{$eq:["sender",userId]},
+                    if: { $eq: ["$sender", userId] },
                     then : "$recipient",
                     else : "$sender",
                 },
             },
-            lastMessageTime:{$first:" $timestamp"}
+            lastMessageTime: { $first: "$timestamp" }
         }
     },
     {$lookup:{

@@ -15,7 +15,7 @@ const MessageBar = () => {
     const fileInputRef = useRef();
     const [message, setMessage] = useState("");
     const [emojiPickerOpen, setEmojiPickerOpen] = useState(false);
-    const {selectedChatType,selectedChatData,userInfo, setIsUploading, setFileUploadProgress, setIsDownloading, seFileDownloadProgress} = useAppStore();
+    const { selectedChatType, selectedChatData, userInfo, setIsUploading, setFileUploadProgress } = useAppStore();
     useEffect(() => {
         function handleClickOutside(event) {
             if (emojiRef.current && !emojiRef.current.contains(event.target)) {

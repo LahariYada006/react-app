@@ -36,20 +36,19 @@ export const signup = async (request, response) => {
 };
 
 export const login = async (request, response) => {
-    console.log("LOGIN HIT");
-    console.log("BODY:", request.body);
+   
     try {
         const { email, password } = request.body;
         if (!email || !password) {
             return response.status(400).send("Email and Password is required");
         }
         const user = await User.findOne({ email });
-        console.log("USER FOUND:", user);
+        
         if(!user){
             return response.status(404).send("User with the given email not found");
         }
         const auth = await compare(password,user.password);
-        console.log("AUTH RESULT:", auth);
+    
         if(!auth){
             return response.status(400).send("Password is incorrect");
         }
@@ -62,7 +61,7 @@ export const login = async (request, response) => {
             user: {
                 id: user.id,
                 email: user.email,
-                profileSetUp: user.profileSetUp,
+                profileSetUp: user.profileSetup,
                 firstName: user.firstName,
                 lastName: user.lastName,
                 image:user.image,

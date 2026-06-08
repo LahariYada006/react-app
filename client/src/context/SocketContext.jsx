@@ -16,9 +16,7 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (userInfo) {
-      console.log("userInfo:", userInfo);           // ← add here
-      console.log("userInfo.id:", userInfo.id);     // ← add here
-      console.log("userInfo._id:", userInfo._id);
+      
       socket.current = io(HOST, {
         withCredentials: true,
         query: {
@@ -34,7 +32,7 @@ export const SocketProvider = ({ children }) => {
         const {selectedChatData, selectedChatType} = useAppStore.getState();
         addContactsInDMList(message); 
         if(selectedChatType!==undefined && (selectedChatData._id=== message.sender._id || selectedChatData._id === message.recipient._id)){
-            console.log("message recieveg",message);
+            
             addMessage(message);
             
 
